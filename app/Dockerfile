@@ -16,7 +16,7 @@ RUN eval $(ssh-agent) && \
     ssh-add github_key && \
     ssh-keyscan -H github.com >> /etc/ssh/ssh_known_hosts && \
     git clone git@github.com:jrutowski/garmin_stats.git 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r garmin_stats/app/requirements.txt
 
 EXPOSE 8501
 
