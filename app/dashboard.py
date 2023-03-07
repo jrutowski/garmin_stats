@@ -7,8 +7,8 @@ import plotly.express as px
 
 def main():
     def load_data():
-        db_path = '/Users/joshuarutowski/HealthData/DBs/garmin_activities.db'
-        db_path_hr = '/Users/joshuarutowski/HealthData/DBs/garmin.db'
+        db_path = 'garmin_stats/app/garmin_activities.db'
+        db_path_hr = 'garmin_stats/app/garmin.db'
 
         # activities - main df
         con = sqlite3.connect(db_path)
