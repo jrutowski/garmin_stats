@@ -85,6 +85,14 @@ def main():
     run_start_date = df['activity_date'].min()
     run_end_date = df['activity_date'].max()
 
+    st.set_page_config(
+        page_title = "Garmin Running Data",
+        menu_items = {
+            'Report a bug': "mailto:rutowskijosh@gmail.com"
+            'Github Repo': "https://github.com/jrutowski/garmin_stats"
+        }
+    )
+
     with st.sidebar:
         st.header('Welcome!')
         st.markdown('This dashboard is meant to be a combination of my two passions, running and data science. We live in a world where we are able to meticiliously track most metrics and derive valuable insights from them which allow us to perform not only better but smarter. This dashboard is meant to be a display of this')
