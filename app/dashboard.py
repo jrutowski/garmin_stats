@@ -7,13 +7,8 @@ import plotly.express as px
 
 def main():
     def load_data():
-        db_path = 'garmin_activities.db'
-        db_path_hr = 'garmin.db'
-
         # activities - main df
-        con = sqlite3.connect(db_path)
-        df = pd.read_sql_query("select * from activities", con)
-        con.close()
+        df = pd.read_csv("activities.csv")
 
         # condition df
         df['start_time'] = pd.to_datetime(df['start_time'])
@@ -24,9 +19,7 @@ def main():
         df['week_start'] = df['start_time'].dt.to_period('W').apply(lambda r: r.start_time)
 
         # resting hr 
-        con = sqlite3.connect(db_path_hr)
-        hr_df = pd.read_sql_query("select * from resting_hr", con)
-        con.close()
+        hr_df = pd.read_csv("hr_df.csv")
 
         hr_df['day'] = pd.to_datetime(hr_df['day'])
         hr_df['week_start'] = hr_df['day'].dt.to_period('W').apply(lambda r: r.start_time)
