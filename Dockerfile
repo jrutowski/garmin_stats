@@ -2,6 +2,9 @@
 
 FROM python:3.9-slim
 
+LABEL maintainer "Josh Rutowski  <rutowskijosh@gmail.com>"
+# If you have any comment : LinkedIn - https://www.linkedin.com/in/josh-rutowski/
+
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
