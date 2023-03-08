@@ -82,8 +82,16 @@ def main():
     chi_delta = race_deltas(chi_marathon)
 
     # default values
-    run_start_date = df['activity_date'].min()
-    run_end_date = df['activity_date'].max()
+    run_start_date_init = df['activity_date'].min()
+    run_end_date_init = df['activity_date'].max()
+
+    st.set_page_config(
+        page_title = "Garmin Running Data",
+        menu_items = {
+            'Report a bug': 'mailto:rutowskijosh@gmail.com',
+            'Github Repo': 'https://github.com/jrutowski/garmin_stats'
+        }
+    )
 
     with st.sidebar:
         st.header('Welcome!')
@@ -128,6 +136,7 @@ def main():
         st.plotly_chart(
             px.scatter(test, x = 'activity_date', y = 'pct_above_tempo', size = 'distance', color = 'avg_cadence',
                 title = 'Percent of Workout At or Above Threshold (HR)',
+                color_continious_scale = 'portland',
                 labels = {
                     'activity_date':'Activity Date',
                     'pct_above_tempo':'Percent of Workout At/Above Threshold',
