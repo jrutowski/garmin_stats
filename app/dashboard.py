@@ -95,8 +95,8 @@ def main():
         
         st.subheader('Date Selection')
         st.markdown('Select the date range below which will allow you to see my weekly mileage count')
-        run_start_date = st.date_input('Input Running Start Date', min_value = df['activity_date'].min())
-        run_end_date = st.date_input('Input Running End date', max_value = date.today())
+        run_start_date = st.date_input('Input Running Start Date', min_value = df['activity_date'].min(), value = run_start_date_init)
+        run_end_date = st.date_input('Input Running End date', max_value = date.today(), value = run_end_date_init)
         
         if run_start_date <= run_end_date:
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (run_start_date, run_end_date))
@@ -132,7 +132,7 @@ def main():
         st.plotly_chart(
             px.scatter(test, x = 'activity_date', y = 'pct_above_tempo', size = 'distance', color = 'avg_cadence',
                 title = 'Percent of Workout At or Above Threshold (HR)',
-                color_continious_scale = 'portland',
+                color_continuous_scale = 'portland',
                 labels = {
                     'activity_date':'Activity Date',
                     'pct_above_tempo':'Percent of Workout At/Above Threshold',
