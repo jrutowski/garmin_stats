@@ -136,6 +136,7 @@ def main():
         st.plotly_chart(
             px.scatter(test, x = 'activity_date', y = 'pct_above_tempo', size = 'distance', color = 'avg_cadence',
                 title = 'Percent of Workout At or Above Threshold (HR)',
+                color_continious_scale = 'portland',
                 labels = {
                     'activity_date':'Activity Date',
                     'pct_above_tempo':'Percent of Workout At/Above Threshold',
