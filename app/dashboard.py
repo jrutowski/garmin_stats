@@ -98,9 +98,9 @@ def main():
         st.markdown('This dashboard is meant to be a combination of my two passions, running and data science. We live in a world where we are able to meticiliously track most metrics and derive valuable insights from them which allow us to perform not only better but smarter. This dashboard is meant to be a display of this')
         
         st.subheader('Date Selection')
-        st.markdown('Select the date range below whgich will allow you to see my weekly mileage count')
-        run_start_date = st.date_input('Input Running Start Date', min_value = df['activity_date'].min(), value = run_start_date_init)
-        run_end_date = st.date_input('Input Running End date', max_value = date.today(), value = run_end_date_init)
+        st.markdown('Select the date range below which will allow you to see my weekly mileage count')
+        run_start_date = st.date_input('Input Running Start Date', min_value = df['activity_date'].min())
+        run_end_date = st.date_input('Input Running End date', max_value = date.today())
         
         if run_start_date <= run_end_date:
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (run_start_date, run_end_date))
