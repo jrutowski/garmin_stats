@@ -86,11 +86,7 @@ def main():
     run_end_date_init = df['activity_date'].max()
 
     st.set_page_config(
-        page_title = "Garmin Running Data",
-        menu_items = {
-            'Report a bug': 'mailto:rutowskijosh@gmail.com',
-            'Github Repo': 'https://github.com/jrutowski/garmin_stats'
-        }
+        page_title = "Garmin Running Data"
     )
 
     with st.sidebar:
