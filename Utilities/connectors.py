@@ -7,9 +7,9 @@ db_path_hr = '/Users/joshuarutowski/HealthData/DBs/garmin.db'
 con = sqlite3.connect(db_path)
 df = pd.read_sql_query("select * from activities", con)
 con.close()
-df = df.to_csv('~/desktop/Python/Github/garmin_stats/app/activities.csv', index = False)
+df = df.to_parquet('~/desktop/Python/Github/garmin_stats/app/activities.gzip', index = False)
 
 con = sqlite3.connect(db_path_hr)
 hr_df = pd.read_sql_query("select * from resting_hr", con)
 con.close()
-hr_df = hr_df.to_csv('~/desktop/Python/Github/garmin_stats/app/hr_df.csv', index = False)
+hr_df = hr_df.to_parquet('~/desktop/Python/Github/garmin_stats/app/hr_df.gzip', index = False)
