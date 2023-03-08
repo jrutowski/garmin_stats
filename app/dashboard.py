@@ -8,7 +8,7 @@ import plotly.express as px
 def main():
     def load_data():
         # activities - main df
-        df = pd.read_csv("activities.csv")
+        df = pd.read_parquet("activities.gzip")
 
         # condition df
         df['start_time'] = pd.to_datetime(df['start_time'])
@@ -19,7 +19,7 @@ def main():
         df['week_start'] = df['start_time'].dt.to_period('W').apply(lambda r: r.start_time)
 
         # resting hr 
-        hr_df = pd.read_csv("hr_df.csv")
+        hr_df = pd.read_parquet("hr_df.gzip")
 
         hr_df['day'] = pd.to_datetime(hr_df['day'])
         hr_df['week_start'] = hr_df['day'].dt.to_period('W').apply(lambda r: r.start_time)
