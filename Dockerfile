@@ -16,9 +16,10 @@ RUN eval $(ssh-agent) && \
     ssh-add github_key && \
     ssh-keyscan -H github.com >> /etc/ssh/ssh_known_hosts && \
     git clone -b initial_connections git@github.com:jrutowski/garmin_stats.git 
+    COPY . . 
 RUN pip3 install -r garmin_stats/app/requirements.txt
 
-WORKDIR /app/garmin_stats/app 
+WORKDIR /app/app
 
 EXPOSE 8501
 

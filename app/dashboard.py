@@ -57,8 +57,8 @@ def main():
         frame: the agg frame from the group by of start date
         metric: the column name of the values to obtain the deltas for'''
 
-        max_week = frame['week_start'].max()
-        previous_week = frame['week_start'].max() - pd.Timedelta(1, unit = 'W')
+        max_week = frame['week_start'].max() - pd.Timedelta(1, unit = 'W')
+        previous_week = frame['week_start'].max() - pd.Timedelta(2, unit = 'W')
 
         max_week_value = frame.loc[frame['week_start'] == max_week][metric].item()
         max_week_delta = round(float(max_week_value - frame.loc[frame['week_start'] == previous_week][metric].values), 2)
@@ -105,7 +105,7 @@ def main():
     tab1, tab2, tab3 = st.tabs(['Home', 'Sleep Analysis', 'Spooky'])
     with tab1:
         with st.container():
-            st.header('Weekly Metrics')
+            st.header('Previous Week Metrics')
             col1, col2, col3, col4 = st.columns(4)
             col1.metric("Distance (in miles)", max_week_distance, max_week_delta)
             col2.metric("Activities", max_week_activities, max_week_activities_delta)
