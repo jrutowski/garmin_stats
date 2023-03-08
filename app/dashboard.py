@@ -88,6 +88,10 @@ def main():
     ia50_delta = race_deltas(ia50)
     chi_delta = race_deltas(chi_marathon)
 
+    # default values
+    run_start_date = df['activity_date'].min()
+    run_end_date = df['activity_date'].max()
+
     with st.sidebar:
         st.header('Welcome!')
         st.markdown('This dashboard is meant to be a combination of my two passions, running and data science. We live in a world where we are able to meticiliously track most metrics and derive valuable insights from them which allow us to perform not only better but smarter. This dashboard is meant to be a display of this')
