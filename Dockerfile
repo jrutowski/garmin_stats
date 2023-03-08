@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone -b initial_connections https://github.com/jrutowski/garmin_stats.git .
 RUN pip3 install -r requirements.txt
-
+RUN echo "Requirements installed"
 WORKDIR /app/app
 
 EXPOSE 8501
