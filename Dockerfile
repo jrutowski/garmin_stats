@@ -11,12 +11,7 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-COPY github_key .
-RUN eval $(ssh-agent) && \
-    ssh-add github_key && \
-    ssh-keyscan -H github.com >> /etc/ssh/ssh_known_hosts && \
-    git clone git@github.com:jrutowski/garmin_stats.git 
-    COPY . . 
+RUN git clone git@github.com:jrutowski/garmin_stats.git
 RUN pip3 install -r requirements.txt
 
 WORKDIR /app/app
