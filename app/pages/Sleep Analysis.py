@@ -11,7 +11,7 @@ def main():
         return round(hours, 2)
 
     def sleep_conditioning():  
-        df = pd.read_parquet('~/desktop/Python/Github/garmin_stats/app/sleep_df.gzip')  
+        df = pd.read_parquet('sleep_df.gzip')  
         df = df.loc[df['start'].notna()] # removing NA rows
 
         df['day'] = pd.to_datetime(df['day'])
