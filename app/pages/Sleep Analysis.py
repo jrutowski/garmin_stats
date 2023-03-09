@@ -46,8 +46,13 @@ def main():
         st.subheader('Boxplots for Sleep Analysis')
         st.markdown("""
         Sleep is one of the most essential things we can do to properly recover and ensure the following day we can have a productive workout. Below are boxplots
-        which show the distribution of various percents of sleep cycles (REM, Deep, Total) across various weekdays. It is reccomended that around *20-25%* of total sleep be REM,
-        and *13-33%* be deep sleep. Included in these charts is also **Sleep Score** which is a proprietary quantification designed by Garmin regarding the quality of your sleep and
+        which show the distribution of various percents of sleep cycles (REM, Deep, Total) across various weekdays. 
+        
+        It is reccomended that 
+        1. ~*20-25%* of total sleep be REM
+        2. ~*13-33%* of total sleep be Deep Sleep. 
+        
+        Included in these charts is also **Sleep Score** which is a proprietary quantification designed by Garmin regarding the quality of your sleep and
         how well your sleep falls within the reccomended guidelines etc.
 
         For next steps of this analysis, I would like to better understand how sleep affects my training. One of the hardest parts of that analysis will be a) definining our effect, b)
