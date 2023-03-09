@@ -105,8 +105,8 @@ def main():
         
         st.subheader('Contact Information')
         st.markdown(
-            "Github: [Code Repo](https://github.com/jrutowski/garmin_stats)\n"  
-            "Strava Profile: [Strava Athlete](https://www.strava.com/athletes/95221610)\n"
+            "Github: [Code Repo](https://github.com/jrutowski/garmin_stats)  \n"  
+            "Strava Profile: [Strava Athlete](https://www.strava.com/athletes/95221610)  \n"
             "Contact: [rutowskijosh@gmail.com](mailto:rutowskijosh@gmail.com)")
 
     tab1, tab2, tab3 = st.tabs(['Home', 'Sleep Analysis', 'Spooky'])
