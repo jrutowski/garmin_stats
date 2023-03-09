@@ -47,7 +47,8 @@ def main():
         col_map = {
             'total_sleep_hrs':'Total Sleep Hours',
             'sleep_pct_rem':'Percent of Sleep as REM',
-            'sleep_pct_deep':'Percent of Sleep as Deep' }
+            'sleep_pct_deep':'Percent of Sleep as Deep',
+            'score': 'Sleep Score (Garmin)' }
         boxplot_option = st.selectbox('Sleep Type Selection', col_map.keys(), format_func = lambda x: col_map[x] )
         st.plotly_chart(
             px.box(sleep_df, x = 'weekday', y = boxplot_option,
