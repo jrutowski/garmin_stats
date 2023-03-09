@@ -13,3 +13,9 @@ con = sqlite3.connect(db_path_hr)
 hr_df = pd.read_sql_query("select * from resting_hr", con)
 con.close()
 hr_df = hr_df.to_parquet('~/desktop/Python/Github/garmin_stats/app/hr_df.gzip', index = False)
+
+con = sqlite3.connect(db_path_hr)
+sleep_df = pd.read_sql_query("select * from sleep", con)
+con.close()
+sleep_df = hr_df.to_parquet('~/desktop/Python/Github/garmin_stats/app/sleep_df.gzip', index = False)
+

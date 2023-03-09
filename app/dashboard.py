@@ -109,7 +109,7 @@ def main():
             "Strava Profile: [Strava Athlete](https://www.strava.com/athletes/95221610)  \n"
             "Contact: [rutowskijosh@gmail.com](mailto:rutowskijosh@gmail.com)")
 
-    tab1, tab2, tab3 = st.tabs(['Home', 'Sleep Analysis', 'Spooky'])
+    tab1, tab2 = st.tabs(['Home', 'Spooky'])
     with tab1:
         with st.container():
             st.header('Previous Week Metrics')
@@ -146,6 +146,8 @@ def main():
                 }
             )
         )
+    with tab2:
+        st.header("Stay tuned for more running analysis!")
 if __name__ == '__main__':
     main()
 #sleep by relative effort?
