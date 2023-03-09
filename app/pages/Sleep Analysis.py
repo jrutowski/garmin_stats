@@ -44,6 +44,15 @@ def main():
 
     with st.container():
         st.subheader('Boxplots for Sleep Analysis')
+        st.markdown("""
+        Sleep is one of the most essential things we can do to properly recover and ensure the following day we can have a productive workout. Below are boxplots
+        which show the distribution of various percents of sleep cycles (REM, Deep, Total) across various weekdays. It is reccomended that around *20-25%* of total sleep be REM,
+        and *13-33%* be deep sleep. Included in these charts is also **Sleep Score** which is a proprietary quantification designed by Garmin regarding the quality of your sleep and
+        how well your sleep falls within the reccomended guidelines etc.
+
+        For next steps of this analysis, I would like to better understand how sleep affects my training. One of the hardest parts of that analysis will be a) definining our effect, b)
+        taking into account a natural progression in fitness and lastly c) Quantifying it. As I ponder this question, feel free to leave feedback and stay updated!
+        """)
         col_map = {
             'total_sleep_hrs':'Total Sleep Hours',
             'sleep_pct_rem':'Percent of Sleep as REM',
@@ -57,6 +66,7 @@ def main():
                 labels = {
                         'weekday': 'Weekday',
                         'boxplot_option': col_map[boxplot_option]})
+        st.text('Minimum Date in Sample: {0}, Maximum Date in Sample: {1}'.format(sleep_df['day'].min().strftime('%Y-%m-%d'), sleep_df['day'].max().strftime('%Y-%m-%d')))
     
 if __name__ == '__main__':
     main()
