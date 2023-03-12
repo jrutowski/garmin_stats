@@ -38,8 +38,8 @@ def main():
     with st.sidebar:
         st.subheader('Sleep Analysis')
         st.markdown("""
-        This page is meant to dive deeper into my own sleep data and evaluate how it effects my performance. The goal is to not only understand the descriptive trends of
-        my sleep patterns, but also how we can directly tie these to how it effects performance
+        This page is meant to dive deeper into my own sleep data and evaluate how it affects my performance. The goal is to not only understand the descriptive trends of
+        my sleep patterns, but also how we can directly tie these to how it affects performance
         """)
 
     with st.container():
