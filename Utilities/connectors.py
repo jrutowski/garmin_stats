@@ -1,5 +1,9 @@
 import pandas as pd
 import sqlite3 
+import os 
+
+# refreshing local data source
+os.system("garmindb_cli.py --all --download --import --analyze --latest")
 
 db_path = '/Users/joshuarutowski/HealthData/DBs/garmin_activities.db'
 db_path_hr = '/Users/joshuarutowski/HealthData/DBs/garmin.db'
@@ -17,5 +21,5 @@ hr_df = hr_df.to_parquet('~/desktop/Python/Github/garmin_stats/app/hr_df.gzip', 
 con = sqlite3.connect(db_path_hr)
 sleep_df = pd.read_sql_query("select * from sleep", con)
 con.close()
-sleep_df = hr_df.to_parquet('~/desktop/Python/Github/garmin_stats/app/sleep_df.gzip', index = False)
+sleep_df = sleep_df.to_parquet('~/desktop/Python/Github/garmin_stats/app/sleep_df.gzip', index = False)
 
