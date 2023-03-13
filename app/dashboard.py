@@ -49,9 +49,9 @@ def main():
         '''Function to return the difference in values between the max week and previous week for delta values
         frame: the agg frame from the group by of start date
         metric: the column name of the values to obtain the deltas for'''
-
-        max_week = frame['week_start'].max() - pd.Timedelta(1, unit = 'W')
-        previous_week = frame['week_start'].max() - pd.Timedelta(2, unit = 'W')
+        today = datetime.today()
+        max_week = (today - pd.Timedelta(1, unit = 'W')).strftime('%Y-%m-%d')
+        previous_week = (today - pd.Timedelta(2, unit = 'W')).strftime('%Y-%m-%d')
 
         max_week_value = frame.loc[frame['week_start'] == max_week][metric].item()
         max_week_delta = round(float(max_week_value - frame.loc[frame['week_start'] == previous_week][metric].values), 2)
