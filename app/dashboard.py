@@ -126,11 +126,12 @@ def main():
             col3.metric("Chicago Marathon", f"{chi_delta.days * -1} days")
 
         st.plotly_chart(
-            px.bar(agg_df[(agg_df['week_start'].dt.date >= run_start_date) & (agg_df['week_start'].dt.date <= run_end_date)], x = 'week_start', y = 'TotalDistance',
+            px.line(agg_df[(agg_df['week_start'].dt.date >= run_start_date) & (agg_df['week_start'].dt.date <= run_end_date)], x = 'week_start', y = 'TotalDistance',
                 title = 'Total Running Distance (in Miles) by Week',
+                markers = True,
                 labels = {
                     'week_start': 'Start Week Date',
-                    'TotalDistance': 'Total Distance (in Miles)'
+                    'TotalDistance': 'Total Distance Ran (in Miles)'
                 }
             ))
         
