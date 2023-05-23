@@ -4,6 +4,7 @@ import pandas as pd
 from datetime import datetime, date, timedelta
 import numpy as np
 import plotly.express as px
+from PIL import Image
 
 def main():
     def load_data():
@@ -109,7 +110,7 @@ def main():
             "Strava Profile: [Strava Athlete](https://www.strava.com/athletes/95221610)  \n"
             "Contact: [rutowskijosh@gmail.com](mailto:rutowskijosh@gmail.com)")
 
-    tab1, tab2 = st.tabs(['Home', 'Spooky'])
+    tab1, tab2 = st.tabs(['Home', 'Ice Age 50 Miler Analysis'])
     with tab1:
         with st.container():
             st.header('Previous Week Metrics')
@@ -121,7 +122,7 @@ def main():
 
             st.header('Upcoming Races')
             col1, col2, col3 = st.columns(3)
-            col1.metric("Ice Age 50 Mile Ultramarathon", f"{ia50_delta.days * -1} days")
+            col1.metric("Ice Age 50 Mile Ultramarathon", f"COMPLETED!")
             col2.metric("Vermont 100 Mile Ultramarathon", f"{vt_delta.days * -1} days")
             col3.metric("Chicago Marathon", f"{chi_delta.days * -1} days")
 
@@ -147,15 +148,6 @@ def main():
                 }
             )
         )
-    with tab2:
-        st.header("Stay tuned for more running analysis!")
 if __name__ == '__main__':
     main()
-#sleep by relative effort?
-# DEV
-# manual overrides
-# activities = 'running'
-# max_day = date.today()
 
-# start_date = df['activity_date'].min()
-# end_date = datetime.today().date()
