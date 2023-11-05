@@ -120,11 +120,13 @@ def main():
             col3.metric("Active Heart Rate (in BPM)",max_week_hr_active, max_week_hr_active_delta) 
             col4.metric("Resting Heart Rate (in BPM)", max_week_hr_resting, max_week_hr_active_resting)
 
-            st.header('Upcoming Races')
-            col1, col2, col3 = st.columns(3)
-            col1.metric("Ice Age 50 Mile Ultramarathon", f"COMPLETED!")
-            col2.metric("Vermont 100 Mile Ultramarathon", f"{vt_delta.days * -1} days")
-            col3.metric("Chicago Marathon", f"{chi_delta.days * -1} days")
+            st.header('2023 Race Results')
+            col1, col2, col3, col4, col5 = st.columns(5)
+            col1.metric("Ice Age 50 Mile Ultramarathon", f"Finish Time: 11:34:19")
+            col2.metric("Kettle 38 Mile Ultramarathon", f"Finish Time: 9:33:47")
+            col3.metric("Burning River 100 Mile Ultramarathon", f"Finish Time: 29:20:52")
+            col4.metric("Chicago Marathon", f"Finish Time: 3:31:31")
+            col5.metric("Mines of Spain 100 Mile Ultramarathon", f"Finish Time: 28:17:06")
 
         st.plotly_chart(
             px.line(agg_df[(agg_df['week_start'].dt.date >= run_start_date) & (agg_df['week_start'].dt.date <= run_end_date)], x = 'week_start', y = 'TotalDistance',
